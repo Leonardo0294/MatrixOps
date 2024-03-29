@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type="number"] {
+    width: 50px;
+    margin-right: 10px;
+}
+
+#submitBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#matricesInputs {
+    margin-top: 20px;
+}
+
+#matricesInputs input {
+    margin-bottom: 10px;
+    width: 50px;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
