@@ -1,31 +1,78 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiplicación de Matrices</title>
-    <link rel="stylesheet" href="../public/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Multiplicación de Matrices</h1>
-    <div>
-        <label for="rows1">Filas de Matriz 1:</label>
-        <input type="number" id="rows1">
-        <label for="cols1">Columnas de Matriz 1:</label>
-        <input type="number" id="cols1">
-    </div>
-    <div>
-        <label for="rows2">Filas de Matriz 2:</label>
-        <input type="number" id="rows2">
-        <label for="cols2">Columnas de Matriz 2:</label>
-        <input type="number" id="cols2">
-    </div>
-    <div>
-        <button id="submitBtn">Enviar</button>
-    </div>
-    <div id="matricesInputs"></div>
-    <div id="result"></div>
 
-    <script type="module" src="/client.js"></script>
+<body class="bg-gray-200 h-screen">
+
+    <main class="container mx-auto py-10">
+
+        <!-- * ORDEN DE LAS MATRICES -->
+        <section class="flex justify-center">
+
+            <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-xl font-semibold mb-4 text-gray-800">Indique el orden de las matrices</h2>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="rows1" class="block text-sm font-medium text-gray-700">Filas de Matriz 1:</label>
+                        <input type="number" id="rows1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    </div>
+
+                    <div>
+                        <label for="cols1" class="block text-sm font-medium text-gray-700">Columnas de Matriz 1:</label>
+                        <input type="number" id="cols1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    </div>
+
+                    <div>
+                        <label for="rows2" class="block text-sm font-medium text-gray-700">Filas de Matriz 2:</label>
+                        <input type="number" id="rows2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    </div>
+
+                    <div>
+                        <label for="cols2" class="block text-sm font-medium text-gray-700">Columnas de Matriz 2:</label>
+                        <input type="number" id="cols2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    </div>
+                </div>
+
+                <button class="mt-6 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Crear Matrices</button>
+            </div>
+
+        </section>
+
+        <!-- * MATRICES -->
+        <section class="grid grid-cols-2 gap-6 mt-8">
+            <!-- * MATRIZ 1 -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-lg font-semibold mb-4 text-gray-800">Matriz 1</h3>
+                <div id="matriz1Content" class="overflow-auto h-32 border border-gray-300 p-2">Cargue los datos</div>
+            </div>
+
+            <!-- * MATRIZ 2 -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-lg font-semibold mb-4 text-gray-800">Matriz 2</h3>
+                <div id="matriz2Content" class="overflow-auto h-32 border border-gray-300 p-2">Cargue los datos</div>
+            </div>
+        </section>
+
+        <button id="calcular" class="mt-8 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded hidden">Calcular</button>
+
+        <!-- * RESULTADO -->
+        <section class="mt-8 hidden" id="sectionResult">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-lg font-semibold mb-4 text-gray-800">Resultado de la multiplicación</h2>
+                <div id="divResult" class="overflow-auto h-32 border border-gray-300 p-2">Esperando a recibir datos...</div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../public/client.js"></script>
 </body>
+
 </html>

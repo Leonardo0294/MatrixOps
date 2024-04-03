@@ -17,23 +17,17 @@ export const multiplyMatrices = (req, res) => {
     const rows2 = matrix2.length;
     const cols2 = matrix2[0].length;
 
-    // Validar que las matrices sean multiplicables
+    // Validar que las dimensiones sean compatibles para la multiplicación
     if (cols1 !== rows2) {
-        return res.status(400).json({ error: 'No se pueden multiplicar las matrices debido a dimensiones incorrectas.' });
+        return res.status(400).json({ error: 'Las dimensiones de las matrices no son compatibles para la multiplicación.' });
     }
 
-    // Inicializar la matriz resultante con ceros
+    // Realizar la multiplicación de las matrices
     const result = [];
     for (let i = 0; i < rows1; i++) {
         result[i] = [];
         for (let j = 0; j < cols2; j++) {
             result[i][j] = 0;
-        }
-    }
-
-    // Realizar la multiplicación de las matrices
-    for (let i = 0; i < rows1; i++) {
-        for (let j = 0; j < cols2; j++) {
             for (let k = 0; k < cols1; k++) {
                 result[i][j] += matrix1[i][k] * matrix2[k][j];
             }
@@ -41,5 +35,5 @@ export const multiplyMatrices = (req, res) => {
     }
 
     // Enviar el resultado como respuesta
-    res.json({ result });
+    return res.status(200).json(result);
 };
